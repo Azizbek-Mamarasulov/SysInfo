@@ -1,0 +1,28 @@
+:root {
+    --primary-color: #30c88b;
+    --background-color: #000;
+}
+
+body {
+    background: var(--background-color) url('../img/bg.jpg') no-repeat 0px -30px /
+    cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+span {
+    color: var(--primary-color);
+}
+
+.row span:last-child {
+    margin-left: 5px;
+    color: white;
+}
