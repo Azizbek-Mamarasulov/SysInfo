@@ -2,16 +2,17 @@ const { Tray, Menu, app } = require("electron");
 
 
 class AppTray extends Tray {
-    constructor(icon, mainWindow) {
+    constructor(icon, mainWindow, isMac) {
         super(icon);
         const trayContextMenu = Menu.buildFromTemplate([
-            { 
-                role: "quit",
+            {
+                label: isMac ? "Quit" : "Exit",
                 click: () => {
+                    console.log(1)
                     app.quitting = true;
                     app.quit();
                 }
-             }
+            }
         ]);
         this.mainWindow = mainWindow;
         this.setToolTip(app.name);
