@@ -50,8 +50,12 @@ app.whenReady().then(() => {
 
     mainWindow.on('ready', () => mainWindow = null);
     mainWindow.on('close', (e) => {
-        e.preventDefault();
-        mainWindow.hide();
+        if (app.quitting) {
+            app.quit()
+        } else {
+            e.preventDefault();
+            mainWindow.hide();
+        }
     })
 });
 
@@ -87,7 +91,18 @@ const menuTemplate = [
             ]
         }
     ] : []),
-    { role: "fileMenu" },
+    {
+        label: "File",
+        submenu: [
+            {
+                label: "Exit",
+                click: () => {
+                    app.quitting = true;
+                    app.quit();
+                }
+            }
+        ]
+    },
     {
         label: "View",
         submenu: [

@@ -5,7 +5,13 @@ class AppTray extends Tray {
     constructor(icon, mainWindow) {
         super(icon);
         const trayContextMenu = Menu.buildFromTemplate([
-            { role: "quit" }
+            { 
+                role: "quit",
+                click: () => {
+                    app.quitting = true;
+                    app.quit();
+                }
+             }
         ]);
         this.mainWindow = mainWindow;
         this.setToolTip(app.name);
