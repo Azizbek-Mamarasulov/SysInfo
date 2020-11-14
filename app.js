@@ -92,7 +92,7 @@ const menuTemplate = [
         }
     ] : []),
     {
-        label: "File",
+        role: "fileMenu",
         submenu: [
             {
                 label: "Exit",
