@@ -1,6 +1,5 @@
 const { Tray, Menu, app } = require("electron");
 
-
 class AppTray extends Tray {
     constructor(icon, mainWindow, isMac) {
         super(icon);

@@ -56,7 +56,7 @@ app.whenReady().then(() => {
             e.preventDefault();
             mainWindow.hide();
         }
-    })
+    });
 });
 
 
