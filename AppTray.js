@@ -7,7 +7,6 @@ class AppTray extends Tray {
             {
                 label: isMac ? "Quit" : "Exit",
                 click: () => {
-                    console.log(1)
                     app.quitting = true;
                     app.quit();
                 }

@@ -48,7 +48,7 @@ app.whenReady().then(() => {
 
     tray = new AppTray(icon, mainWindow);
 
-    mainWindow.on('ready', () => mainWindow = null);
+    mainWindow.on('closed', () => (mainWindow = null));
     mainWindow.on('close', (e) => {
         if (app.quitting) {
             app.quit()
